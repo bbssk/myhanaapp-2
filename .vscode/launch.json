@@ -1,5 +1,14 @@
 {
   "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Start Hybrid Development",
+      "configurations": [
+        "cds watch --profile hybrid",
+        "cds bind --exec -- npm start --prefix app/router"
+      ]
+    }
+  ],
   "configurations": [
     {
       "name": "cds serve",
@@ -12,6 +21,24 @@
         "--with-mocks",
         "--in-memory?"
       ],
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "command": "cds bind --exec -- npm start --prefix app/router",
+      "name": "cds bind --exec -- npm start --prefix app/router",
+      "request": "launch",
+      "type": "node-terminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "command": "cds watch --profile hybrid",
+      "name": "cds watch --profile hybrid",
+      "request": "launch",
+      "type": "node-terminal",
       "skipFiles": [
         "<node_internals>/**"
       ]
