@@ -19,7 +19,9 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-interaction_items": "cds watch --open interaction_items/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-interaction_items": "cds watch --open interaction_items/webapp/index.html?sap-ui-xx-viewCache=false",
+    "build": "mbt build",
+    "deploy": "cf deploy mta_archives/MyHANAApp_1.0.0.mtar"
   },
   "cds": {
     "requires": {
